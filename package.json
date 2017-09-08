@@ -8,7 +8,8 @@
     "start": "nodemon lib/server.js",
     "dev": "pm2 start lib/server.js",
     "lint": "eslint --ext .js lib config",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "webpack": "webpack -wd"
   },
   "repository": {
     "type": "git",
@@ -28,11 +29,16 @@
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.26.0",
     "ejs": "^2.5.7",
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.5.6"
   }
 }

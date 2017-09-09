@@ -5,8 +5,8 @@
   "author": "Binoy Sinha",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon lib/server.js",
-    "dev": "pm2 start lib/server.js",
+    "dev": "set NODE_PATH=./lib&& nodemon --exec babel-node lib/app.js",
+    "prod": "NODE_PATH=./lib&& pm2 start lib/server.js --interpreter babel-node",
     "lint": "eslint --ext .js lib config",
     "lint:fix": "npm run lint -- --fix",
     "webpack": "webpack -wd",
@@ -31,6 +31,7 @@
     "react-test-renderer": "^15.6.1"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",

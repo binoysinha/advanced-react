@@ -1,0 +1,8 @@
+{
+  "name": "state-api",
+  "version": "State API",
+  "description": "State Api",
+  "main": "lib/index.js",
+  "repository": "Binoy Sinha",
+  "license": "MIT"
+}

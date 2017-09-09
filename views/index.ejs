@@ -4,10 +4,12 @@
         <title>Advanced React</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        <script type="text/javascript">
+            window.initialData = <%- JSON.stringify(initialData) -%>
+        </script>
     </head>
     <body>
-        <main id="root"><%- initialContent %></main> 
+        <main id="root"><%- initialMarkup %></main> 
         <script src="bundle.js" charset="utf-8"></script>
     </body>
 </html>

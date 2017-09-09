@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "enzyme": "^2.9.1",
     "eslint": "^4.6.1",
     "eslint-plugin-react": "^7.3.0",
     "jest": "^21.0.2",
@@ -41,6 +42,7 @@
     "babel-register": "^6.26.0",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "webpack": "^3.5.6"

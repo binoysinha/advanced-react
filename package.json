@@ -5,12 +5,15 @@
   "author": "Binoy Sinha",
   "license": "MIT",
   "scripts": {
-    "dev": "set NODE_PATH=./lib&& nodemon --exec babel-node lib/app.js",
-    "prod": "NODE_PATH=./lib&& pm2 start lib/server.js --interpreter babel-node",
+    "dev": "set NODE_PATH=./lib&& pm2 start lib/server.js --watch --name appDev",
+    "prod": "set NODE_ENV=production NODE_PATH=./build&& pm2 start build/app.js  --name appProd",
     "lint": "eslint --ext .js lib config",
     "lint:fix": "npm run lint -- --fix",
     "webpack": "webpack -wd",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "verify-tests": "jest --coverage",
+    "build-webpack": "webpack -p",
+    "build-node": "babel lib -d build --copy-files"
   },
   "repository": {
     "type": "git",
@@ -19,8 +22,11 @@
   "babel": {
     "presets": [
       "react",
-      "env",
-      "stage-2"
+      ["env", {"targets": {"node": "current"}}]
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread"
     ]
   },
   "devDependencies": {
@@ -29,6 +35,7 @@
     "eslint": "^4.6.1",
     "eslint-plugin-react": "^7.3.0",
     "jest": "^21.0.2",
+    "react-addons-perf": "^15.4.2",
     "react-test-renderer": "^15.6.1"
   },
   "dependencies": {
@@ -42,6 +49,8 @@
     "babel-register": "^6.26.0",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
+    "lodash.debounce": "^4.0.8",
+    "lodash.pickby": "^4.6.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
